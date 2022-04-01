@@ -1,0 +1,21 @@
+#!/usr/bin/sh
+while :; do 
+	sleep 1 &
+tyme=$(date +'📅 %a %Y-%m-%d   🕓 %I:%M:%S %p   ↦ %s') 
+cpu_freq=$(grep MHz /proc/cpuinfo|sed s/.*:\ //|paste -sd+| \
+	echo \($(cat /dev/stdin)\)/12|bc|echo $(cat /dev/stdin)MHz)
+
+cpu_temp=$(cat /sys/class/thermal/thermal_zone0/temp|sed 's/\(.\)..$/.\1°C/')
+. ~/.config/sway/cpu_usage
+amixer=$(amixer get Master)
+echo $amixer|grep -q off &&  speaker=🔇 || speaker=🔊
+volume=$(echo $amixer|grep -o [0-9]*%|paste -s|awk '{print "L:"$1 " R:"$2}')
+
+fan_speed=$(cat /sys/class/hwmon/hwmon?/fan1_input)
+
+mem_usage=$(free|awk 'NR==2 \
+	{printf "u:%.0f%%  a:%.0f%% av:%.0f%%\n", \
+	100*$3/$2 ,100*($2-$4)/$2,100*$7/$2}')
+
+echo $speaker $volume │ $tyme │  $cpu_usage"%" $cpu_freq $cpu_temp │  $mem_usage │  $fan_speed"rpm"
+wait ; done
