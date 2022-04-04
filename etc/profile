@@ -37,7 +37,7 @@ export MANPAGER='nvim +Man!'
 #export GROFF_NO_SGR=1
 [[ $PATH != *.local* ]] && export PATH=$PATH:~/.local/bin
 [[ $PATH != *.cargo* ]] && export PATH=$PATH:~/.cargo/bin
-[[ $PATH != *.luarocks ]] && export PATH=$PATH:~/.luarocks/bin
+[[ $PATH != *.luarocks* ]] && export PATH=$PATH:~/.luarocks/bin
 
 export BEMENU_BACKEND=curses
 #vi=~/.config/nvim/init.vim

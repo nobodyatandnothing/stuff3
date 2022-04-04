@@ -14,12 +14,12 @@ set $term foot -a warning
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 for_window [app_id="^launcher"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
-set $menu swaymsg -- exec $term -a launcher sway-launcher-desktop
+set $menu swaymsg -- exec $term -a launcher sway-launcher-desktop.sh
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
-output * bg /usr/local/share/backgrounds/sway-redline.png fill
+output * bg /usr/local/share/backgrounds/dracula.png fit 
 
 ### Idle configuration
 #
