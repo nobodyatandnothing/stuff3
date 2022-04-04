@@ -1,0 +1,6 @@
+#!/bin/fish
+if test -z $argv; set argv './'; end
+for dir in $argv
+  fd -H --type d '^.git$' $dir --exec echo -en "\e[34;1m{//}: \e[0m" \; --exec git -C '{//}' pull
+end
+# vim:set shiftwidth=2:expandtabs
