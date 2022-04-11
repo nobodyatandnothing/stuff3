@@ -1,4 +1,4 @@
-return require('packer').startup(function()
+return require('packer').startup({function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
@@ -28,4 +28,9 @@ return require('packer').startup(function()
   use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
   use 'shaunsingh/nord.nvim'
 
-end)
+end,
+config={
+	display={
+		open_fn=require('packer.util').float,
+	}
+}})

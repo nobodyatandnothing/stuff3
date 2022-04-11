@@ -1,6 +1,7 @@
 #!/bin/fish
 if test -z $argv; set argv './'; end
 for dir in $argv
-  fd -H --type d '^.git$' $dir --exec echo -en "\e[34;1m{//}: \e[0m" \; --exec git -C '{//}' pull
+  fd -H --type d '^.git$' $dir --exec echo -en "\e[34;1m{//}: \e[0m" \;  --exec git -C '{//}' pull
+  fd -H --type d '^.svn$' $dir --exec echo -en "\e[34;1m{//}: \e[0m" \; --exec svn update '{//}' --password ''
 end
 # vim:set shiftwidth=2:expandtabs

@@ -35,9 +35,16 @@ export MANPAGER='nvim +Man!'
 
 #export MANPAGER="less -R --use-color -Dd+r -Du+b"
 #export GROFF_NO_SGR=1
-[[ $PATH != *.local* ]] && export PATH=$PATH:~/.local/bin
-[[ $PATH != *.cargo* ]] && export PATH=$PATH:~/.cargo/bin
-[[ $PATH != *.luarocks* ]] && export PATH=$PATH:~/.luarocks/bin
+paths="$HOME/.local/bin $HOME/.cargo/bin $HOME/.luarocks/bin /usr/local/games"
+for path in $paths; do
+	[[ $PATH != *$path* ]] && export PATH=$PATH:$path
+done
+
+
+#[[ $PATH != *.local* ]] && export PATH=$PATH:~/.local/bin
+#[[ $PATH != *.cargo* ]] && export PATH=$PATH:~/.cargo/bin
+#[[ $PATH != *.luarocks* ]] && export PATH=$PATH:~/.luarocks/bin
+#[[ $PATH != */usr/local/games* ]] && export PATH=$PATH:/usr/local/bin/game
 
 export BEMENU_BACKEND=curses
 #vi=~/.config/nvim/init.vim
