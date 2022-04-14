@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 while :; do 
 	sleep 1 &
-tyme=$(date +'📅 %a %Y-%m-%d   🕓 %I:%M:%S %p   ↦ %s') 
+tyme=$(date +'📅 %a %Y-%m-%d   🕓 %I:%M:%S %p  ↦ %s') 
 cpu_freq=$(grep MHz /proc/cpuinfo|sed s/.*:\ //|paste -sd+| \
 	echo \($(cat /dev/stdin)\)/12|bc|echo $(cat /dev/stdin)MHz)
 

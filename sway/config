@@ -212,7 +212,7 @@ bar {
     }
 }
 
-xwayland disable
+#xwayland disable
 default_border pixel
 default_floating_border normal 5
 for_window [floating] border csd pixel 10

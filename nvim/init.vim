@@ -12,6 +12,7 @@ set relativenumber
 set complete-=b,u
 set clipboard=unnamedplus
 set shortmess+=I
+set belloff=
 "set mousemodel=popup
 
 
@@ -48,9 +49,9 @@ require('lualine').setup {
 		}
 	}
 require'nvim-treesitter.configs'.setup{
-	ensure_installed = { "fish" },
+	ensure_installed = { "fish","c" },
 	highlight =  {
-		enable = { "fish" },
+		enable = { "fish","c" },
 	},
 	incrementel_selection = {
 		enable = { "fish" },

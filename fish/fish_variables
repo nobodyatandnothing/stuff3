@@ -12,6 +12,7 @@ SETUVAR _fish_abbr_aps:sudo\x20swupd\x20search
 SETUVAR _fish_abbr_apu:sudo\x20swupd\x20update
 SETUVAR _fish_abbr_co:theme\x2esh\x20\x2d\x2ddark\x20\x2di
 SETUVAR _fish_abbr_fd:fd\x20\x2dH
+SETUVAR _fish_abbr_less:/usr/share/nvim/runtime/macros/less\x2esh
 SETUVAR _fish_abbr_ll:exa\x20\x2dFlba\x20\x2d\x2dicons\x20\x2d\x2dno\x2dtime
 SETUVAR _fish_abbr_ls:exa\x20\x2d\x2dicons\x20\x2dFa
 SETUVAR _fish_abbr_tree:exa\x20\x2dFa\x20\x2d\x2dicons\x20\x2d\x2dtree
