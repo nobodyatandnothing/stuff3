@@ -1,20 +1,22 @@
 let &packpath = &runtimepath
-"set statusline+='%F'
-set gdefault
-set guifont=*:h10
-set termguicolors
-set splitbelow
-set splitright
-set mouse=a
-set number
-set showmatch
-set relativenumber
-set complete-=b,u
-set clipboard=unnamedplus
-set shortmess+=I
 set belloff=
+set clipboard=unnamedplus
+set complete-=b,u
 set confirm
 set errorbells
+set gdefault
+set guifont=*:h10
+set mouse=a
+set number
+set relativenumber
+set shada+=%
+set shortmess+=I
+set shortmess-=T
+set showmatch
+set splitbelow
+set splitright
+set termguicolors
+set title
 "set mousemodel=popup
 
 autocmd InsertEnter * call chansend(v:stderr, "\e[?737769h")
@@ -34,7 +36,7 @@ function! InsertsTabWrapper()
         return "\<s-tab>"
     else
         return "\<c-x>"
-    endif
+   endif
 endfunction
 inoremap <expr> <tab> InsertTabWrapper()
 inoremap <expr> <s-tab> InsertsTabWrapper()
@@ -48,8 +50,9 @@ lua << EOF
 require('plugins')
 require('lualine').setup {
 	sections = {
-		lualine_c = {'%F'},
-		lualine_x = {'filetype'}
+		lualine_c = {'%F %m'},
+		lualine_x = {'filetype'},
+		lualine_y = {'%n:%p%%'}
 		}
 	}
 require'nvim-treesitter.configs'.setup{

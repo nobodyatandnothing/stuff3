@@ -213,16 +213,19 @@ bar {
 }
 
 #xwayland disable
-default_border pixel
-default_floating_border normal 5
-for_window [floating] border csd pixel 10
+#default_border pixel
+#default_floating_border normal 5
+#for_window [floating] border csd pixel 10
 for_window [title="^Spyder"] border csd
 focus_follows_mouse no
 font pango:'Hurmit Nerd Font Mono' Bold 10
 title_align center
-seat seat0 hide_cursor {
+seat seat0 {
+	xcursor_theme Dracula
+	hide_cursor {
 	2000
 	when-typing enable
+	}
 }
 
 # dracula theme
