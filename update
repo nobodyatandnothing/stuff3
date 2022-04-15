@@ -1,6 +1,6 @@
 #!/bin/fish
 cp -ru ~/.config/{nvim,fish,fnott,foot,sway,zathura} ./
-cp -u /etc/{profile,sudoers.d/visudo} ./etc/
+cp -ru /etc/{profile,sudoers.d/visudo,greetd} ./etc/
 cp -u ~/Desktop/git/gitupdate ./
 git add .
 git commit -am 'update'

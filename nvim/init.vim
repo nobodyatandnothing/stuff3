@@ -13,8 +13,12 @@ set complete-=b,u
 set clipboard=unnamedplus
 set shortmess+=I
 set belloff=
+set confirm
+set errorbells
 "set mousemodel=popup
 
+autocmd InsertEnter * call chansend(v:stderr, "\e[?737769h")
+autocmd InsertLeave * call chansend(v:stderr, "\e[?737769l")
 
 function! InsertTabWrapper()
     let col = col('.') - 1
