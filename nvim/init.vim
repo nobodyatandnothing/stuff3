@@ -43,6 +43,7 @@ inoremap <expr> <s-tab> InsertsTabWrapper()
 
 noremap gw <C-w><C-w>
 noremap go ^]
+tnoremap <esc><esc> <c-\><c-n>
 
 let $plug='~/.config/nvim/lua/plugins.lua'
 

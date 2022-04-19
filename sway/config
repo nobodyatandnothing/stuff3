@@ -221,7 +221,7 @@ focus_follows_mouse no
 font pango:'Hurmit Nerd Font Mono' Bold 10
 title_align center
 seat seat0 {
-	xcursor_theme Dracula
+	xcursor_theme Dracula-cursors
 	hide_cursor {
 	2000
 	when-typing enable
