@@ -9,7 +9,7 @@ set guifont=*:h10
 set mouse=a
 set number
 set relativenumber
-set shada+=%
+"set shada+=%
 set shortmess+=I
 set shortmess-=T
 set showmatch
@@ -21,6 +21,7 @@ set title
 
 autocmd InsertEnter * call chansend(v:stderr, "\e[?737769h")
 autocmd InsertLeave * call chansend(v:stderr, "\e[?737769l")
+autocmd BufNewFile  *.c	0r /home/gorn/Desktop/live/skeleton.c|normal 2j
 
 function! InsertTabWrapper()
     let col = col('.') - 1
@@ -53,7 +54,6 @@ require('lualine').setup {
 	sections = {
 		lualine_c = {'%F %m'},
 		lualine_x = {'filetype'},
-		lualine_y = {'%n:%p%%'}
 		}
 	}
 require'nvim-treesitter.configs'.setup{

@@ -31,7 +31,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 export GTK_THEME=Dracula
 export XCURSOR_THEME=Dracula
 
-export MANPAGER='nvim +Man!'
+export MANPAGER='nvim +"setlocal nomodifiable" +Man!'
 
 #export MANPAGER="less -R --use-color -Dd+r -Du+b"
 #export GROFF_NO_SGR=1
